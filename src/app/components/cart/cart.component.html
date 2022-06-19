@@ -1,0 +1,31 @@
+<div class="cart">
+    <p-sidebar [(visible)]="siderbarDisplayed" position="right" [baseZIndex]="10000" [style]="{width:'fit-content'}">
+        <span class="title">Votre Commande</span>
+
+        <div class="items">
+            <ng-template ngFor let-orderedProduct [ngForOf]="orderedProductList?.items"; let-index = "index"; let-first="first">
+                <app-order-item [order]="orderedProduct">
+                    <span>{{orderedProduct.name}}</span>
+                </app-order-item>
+            </ng-template>
+        </div>
+        
+
+        <div class="bottom-bloc">
+            <div class="price-bloc">
+                <span class="label">Total </span>
+                <span class="price"> {{totalPrice}} € </span>
+            </div>
+            <button class="validate-order">FINALISER LA COMMANDE</button>
+        </div>
+        
+    </p-sidebar>
+    
+    <button class="nav-cart" (click)="displaySidebar()">
+        <i class="pi pi-shopping-cart"></i>
+        <span class="label">Panier</span>
+        <span class="items">
+            {{numberOfItems}}
+        </span>
+    </button>
+</div> 

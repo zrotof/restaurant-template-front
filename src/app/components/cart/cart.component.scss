@@ -1,0 +1,95 @@
+.cart{
+    position: relative;
+    width: fit-content;
+
+    p-sidebar{
+
+        display: flex;
+        flex-direction: column;
+        
+
+        .title{
+            font-size: 2em;
+            font-weight: 550;
+        }
+
+        .items{
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 150px;
+            width: 430px;
+        }
+
+        .bottom-bloc{
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            bottom: 0px;
+            padding-bottom: 10px;
+            width: 430px;
+            background-color: white;
+
+            .price-bloc{
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+
+                .label{
+                    font-weight: 550;
+                    font-size: 1.2em;
+                }
+
+                .price{
+                    font-weight: 550;
+                    font-size: 1.4em;
+                }
+            }
+
+            .validate-order{
+                background-color: black;
+                color: white;
+                width: 100%;
+                padding: 15px 0;
+                cursor: pointer;
+                border: none;
+                font-size: 1.1em;
+                border-radius: 3px;
+            }
+
+            .validate-order:hover{
+                color: red;
+                font-weight: bold;
+            }
+        }
+    }
+    
+    .nav-cart{
+        display: flex;
+        padding: 5px 10px;
+        border: 1px solid black;
+        border-radius: 100px;
+        position: relative;
+        cursor: pointer;
+        z-index: 99;
+    
+        .label{
+            margin-left: 5px;
+        }
+    
+        .items{
+            position: absolute;
+            top: -14px;
+            right: -10px;
+            background-color: red;
+            height: 25px;
+            width: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+    }
+}

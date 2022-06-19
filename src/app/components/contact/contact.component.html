@@ -1,0 +1,164 @@
+<div class="contact">
+
+    <div class="contact-header">
+        <img src="../../../assets/contact/header-bg.jpeg" alt="">
+        <div class="texts">
+            <h1>Contactez-nous</h1>
+            <span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</span>
+        </div>
+    </div>
+
+    <div class="infos">
+        <div class="datas">
+            <div class="hours-bloc">
+                <h4 class="title">Horaires d'ouverture</h4>
+                <div class="hours">
+                    <i class="pi pi-clock"></i>
+                    <div class="hour">
+                        <span>
+                            <span>Lundi</span>: 09h00 - 17h00
+                        </span>
+                        <span>
+                            <span>Mardi</span>: 09h00 - 17h00
+                        </span>
+                        <span>
+                            <span>Mercredi</span>: 09h00 - 17h00
+                        </span>
+                        <span>
+                            <span>Jeudi</span>: 09h00 - 17h00
+                        </span>
+                        <span>
+                            <span>Vendredi</span>: 09h00 - 17h00
+                        </span>
+                        <span>
+                            <span>Samedi</span>: 09h00 - 17h00
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-bloc">
+                <h4 class="title">Informations de contact</h4>
+                <div class="contact">
+                    <i class="pi pi-map-marker"></i>
+                    <span>12 carrefour de la joie, Nantes</span>
+                </div>
+                <div class="contact">
+                    <i class="pi pi-phone"></i>
+                    <span class="number">(+33) 6 54 21 23 24</span>
+                    
+                </div>
+                <div class="contact">
+                    <i class="pi pi-envelope"></i>
+                    <span>contact@restaurant.com</span>
+                </div>
+            </div>
+        </div>
+        
+
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmitContactForm()">
+
+<!--   
+              <div class="element">
+                  <div class="gender">
+      
+                      <div class="label">
+                          <span>Civilités</span>
+                          <span class="red-star">*</span>
+                      </div>
+                      <select formControlName="civility">
+                          <option [ngValue]="null" disabled></option>
+                          <option *ngFor="let civility of civilities" [ngValue]="civility">{{civility}}</option>
+                      </select>
+                      
+                  </div>
+      
+                  <div *ngIf="isContactFormSubmitted && f.civility.errors" class="error-feedback">
+                    <small *ngIf="f.civility.errors.required">Renseignez</small>
+                  </div>
+              </div>
+-->     
+                <div class="element">
+                  <div class="lastname">
+                    <div class="label">
+                        <span>Votre nom </span>
+                        <span class="red-star">*</span>
+                    </div>
+                    <input type="text" placeholder="Entrez votre nom" formControlName="lastname">
+                  </div>
+                  <div *ngIf="isContactFormSubmitted && f.lastname.errors" class="error-feedback">
+                      <small *ngIf="f.lastname.errors.required">Renseignez votre nom</small>
+                  </div>
+                </div>
+               
+          
+      
+                    
+              <div class="email-phone">
+                <div class="element">
+                    <div class="email">
+                        <div class="label">
+                            <span>Votre email </span>
+                            <span class="red-star">*</span>
+                        </div>
+                        <input type="email" placeholder="Email" formControlName="email">
+                    </div>
+          
+                    <div *ngIf="isContactFormSubmitted && f.email.errors" class="error-feedback">
+                      <small *ngIf="f.email.errors.required">Email manquant</small>
+                    </div>
+                </div>
+          
+                <div class="element">
+                    <div class="phone">
+                        <div class="label">
+                            <span>Votre téléphone </span>
+                        </div>
+                        <input type="text" placeholder="Téléphone" formControlName="phone">
+                    </div>
+                    <div *ngIf="isContactFormSubmitted && f.phone.errors" class="error-feedback">
+                      <small *ngIf="f.phone.errors.required">Téléphone manquant</small>
+                    </div>
+                </div>
+              </div>
+
+              
+<!--
+            <div class="element">
+              <div class="object">
+                <div class="label">
+                    <span>Objet </span>
+                    <span class="red-star">*</span>
+                </div>
+                <input id="objet-input" type="text" formControlName="subject" placeholder="Objet du message">
+              </div>
+              <div *ngIf="isContactFormSubmitted && f.subject.errors" class="error-feedback">
+                <small *ngIf="f.subject.errors.required">Objet du mail manquant</small>
+              </div>
+            </div>
+-->         
+      
+            <div class="element">
+              <div class="message" >
+                <textarea id="message-area" formControlName="message" type="text" placeholder="Entrez votre message ici ..."></textarea>
+              </div>
+              <div *ngIf="isContactFormSubmitted && f.message.errors" class="error-feedback">
+                <small *ngIf="f.message.errors.required">Message manquant</small>
+              </div>
+            </div>
+          
+      
+            <button type="submit" >
+              <ng-container *ngIf="isContactFormSubmittedAndNotErrorOnClientSide; else defaultText">
+                <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+              </ng-container>
+            </button>
+      
+          </form>
+          <ng-template #defaultText>Envoyer</ng-template>
+
+    </div>
+<!--
+    <p-gmap [options]="options" [style]="{'width':'100%','height':'320px'}" ></p-gmap>
+-->
+</div>

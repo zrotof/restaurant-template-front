@@ -1,0 +1,31 @@
+<div class="order-item">
+    <select (change)="changeQuantity($event)" [value]="16">
+        <option value=0 >Supprimer</option>
+        <ng-template ngFor let-quantityArray [ngForOf]="selectQuantityArray"; let-index = "index";  >
+
+            <option *ngIf="index === 0 ; else onlyPositive" disabled></option>
+
+            <ng-template #onlyPositive>
+                <option [selected]="order?.quantity === index" [value]="index">{{index}}</option>
+            </ng-template>
+        </ng-template>
+    </select>
+
+    <div class="infos">
+        <span class="title"> {{order?.name}} </span>
+        <div class="accompaniment" *ngIf="order?.accompaniment">
+            <span class="header">Accompagnement</span>
+            <span class="label"> {{order?.accompaniment}} </span>
+        </div>
+
+        <div class="sauces" *ngIf="(order?.sauces && order?.sauces!.length > 0 )">
+            <span class="header">Sauce(s)</span>
+            <ng-template ngFor let-sauce [ngForOf]="order?.sauces" >
+                <span class="label"> {{sauce}} </span>
+            </ng-template>
+        </div>
+        
+    </div>
+
+    <span class="price"> {{ totalPrice | number: "1.2"}} € </span>
+</div>

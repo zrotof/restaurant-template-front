@@ -1,0 +1,49 @@
+.product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin: 35px 25px;
+    padding: 20px;
+    cursor: pointer;
+                    img{
+                        width: 200px;
+                        height: 200px;
+                        object-fit: cover;
+                    }
+
+                    .service-title{
+                        font-size: 1.5em;
+                        margin: 15px 0;
+                    }
+
+                    span{
+                        text-align: center;
+                        font-size: 0.93em;
+                    }
+
+                    button{
+                        outline: none;
+                        border: none;
+                        border-radius: 5px;
+                        padding: 1px 25px;
+                        background-color: white;
+                        border: 2px solid green;
+                        color: green;
+                        width: fit-content;
+                        font-size: 1.05em;
+                        transition: all 0.3s ease-in-out;
+                        margin: auto;
+                        margin-top: 30px;
+                        cursor: pointer;
+                    }
+        
+                    button:hover{
+                        background-color: green;
+                        color: white;
+                    }
+            }
+
+.product:hover{
+    background-color: rgb(230, 230, 230);
+}

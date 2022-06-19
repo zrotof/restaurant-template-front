@@ -1,0 +1,80 @@
+.order-item{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px 0;
+
+    select{
+        border: none;
+        border-radius: 3px;
+        background-color: #ededed;
+        outline: none;
+        width: 46px;
+        padding: 3px;
+        cursor: pointer;
+    }
+
+    select:hover{
+        color: white;
+        background-color: black;
+    }
+
+    .infos{
+        display: flex;
+        flex-direction: column;
+        margin: 0 20px;
+        flex: 1;
+
+        .title{
+            font-weight: 550;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .accompaniment{
+            display: flex;
+            flex-direction: column;
+            font-size: 0.9em;
+
+            .header{
+                margin-bottom: 2px;
+                margin-top: 7px;
+                font-weight: 548;
+                font-size: 1.2em;
+                font-style: italic;
+
+            }
+
+            .label{
+                margin-left: 17px;
+            }
+
+        }
+
+        .sauces{
+            display: flex;
+            flex-direction: column;
+            font-size: 0.9em;
+
+            .header{
+                margin-bottom: 2px;
+                margin-top: 7px;
+                font-weight: 548;
+                font-size: 1.2em;
+                font-style: italic;
+
+            }
+
+            .label{
+                margin-left: 17px;
+            }
+
+        }
+    }
+
+    .price{
+        font-weight: 550;
+        font-size: 0.85em;
+    }
+}
