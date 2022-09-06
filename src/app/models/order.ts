@@ -8,5 +8,6 @@ export class OrderItem{
     quantity!: number ;
     accompaniment?: string;
     sauces!: string[] ;
-    price!: number
+    price!: number;
+    image?:string;
 }

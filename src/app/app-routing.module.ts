@@ -5,8 +5,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { CartPageComponent } from './components/cart-page/cart-page.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-
 
 const routes: Routes = [
   {path: '', redirectTo: '/accueil', pathMatch: 'full' },
@@ -14,6 +14,7 @@ const routes: Routes = [
   {path: 'menus', component : MenuComponent},
   {path: 'a-propos', component : AboutComponent},
   {path: 'contact', component : ContactComponent},
+  {path: 'panier', component : CartPageComponent},
   {path: '**', component : NotFoundComponent}
 ];
 

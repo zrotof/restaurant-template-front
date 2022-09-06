@@ -28,7 +28,6 @@ export class AddOrderService {
   getOrder(): Order{
     const orderJsonString : string = localStorage.getItem('order') as string;
     const order : Order = JSON.parse(orderJsonString);
-
     return order;
   }
 

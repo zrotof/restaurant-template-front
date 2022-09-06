@@ -28,8 +28,6 @@ selectQuantityArray: number[] = new Array<number>(50)  ;
   getTotalPrice(){
     this.totalPrice = 0;
     this.totalPrice = this.order!.quantity * this.order!.price;
-    console.log(this.totalPrice, this.order!.quantity , this.order!.price)
-
   }
 
   changeQuantity(e: any){

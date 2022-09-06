@@ -1,6 +1,7 @@
 <div class="product" (click)="openProduct()">
     <img src={{product?.image}} alt="">
-    <h5 class="service-title">{{product?.name}}</h5>
+    <h2 class="service-title">{{product?.name}}</h2>
     <span>{{product?.shortDescription}}</span>
+    <span class="price"> {{product?.price | number : "1.2"}} € </span>
     <button>Commander</button>
 </div>

@@ -27,6 +27,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { AddProductCartComponent } from './components/add-product-cart/add-product-cart.component';
 import { OrderItemComponent } from './components/order-item/order-item.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { CartPageComponent } from './components/cart-page/cart-page.component';
 
 
 
@@ -43,7 +45,9 @@ import { OrderItemComponent } from './components/order-item/order-item.component
     NotFoundComponent,
     ProductDetailsComponent,
     AddProductCartComponent,
-    OrderItemComponent
+    OrderItemComponent,
+    FooterComponent,
+    CartPageComponent
     
   ],
   imports: [

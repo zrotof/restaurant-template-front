@@ -1,0 +1,112 @@
+<div class="items-bloc">
+
+    <div class="content my-container">
+        <div class="items-list">
+            <div class="item" *ngFor="let item of itemList.items">
+                <img src="{{item.image}}">
+                <div class="item-infos">
+                    <span class="item-title"> {{item.name}}</span>
+                    <div class="number-bloc">
+                        <span (click)="minusProduct(item)" class="buttons">
+                            <i class="pi pi-minus"></i>
+                        </span>
+                        <span class="item-quantity">{{item.quantity}}</span>
+                        <span (click)="plusProduct(item)" class="buttons">
+                            <i class="pi pi-plus"></i>
+                        </span>
+                    </div>
+                    
+                </div>
+                <div class="del-price">
+                    <i class="pi pi-trash" (click)="deleteProduct(item)"></i>
+                    <span class="info-total-price"> {{item.price * item.quantity | number :"1.2"}} </span>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="total-form">
+            
+            <div class="total">
+                <div class="total-details">
+                    <span class="total-header">TOTAL</span>
+                
+                    <div class="price-net">
+                        <span>Valeur de la commande</span>
+                        <span> {{totalPrice | number : "1.2"}} €</span>
+                    </div>
+                </div>
+            </div>
+
+            <form [formGroup]="cartForm">
+
+                <div class="elements">
+                    <div class="element">
+
+                        <div class="firstname">
+                            <div class="label">
+                                <span>Nom</span>
+                                <span class="red-star">*</span>
+                            </div>
+                            <input type="text" placeholder="Entrez votre nom" formControlName="firstname">
+                        </div>
+                        <div *ngIf="isCartFormSubmitted && f.firstname.errors" class="error-feedback">
+                            <small *ngIf="f.firstname.errors.required">Nom manquant</small>
+                        </div>
+
+                    </div>
+
+                    <div class="element">
+                        <div class="lastname">
+                            <div class="label">
+                                <span>Prénom</span>
+                                <span class="red-star">*</span>
+                            </div>
+                            <input type="text" placeholder="Entrez votre prénom" formControlName="lastname">
+                        </div>
+                        <div *ngIf="isCartFormSubmitted && f.lastname.errors" class="error-feedback">
+                            <small *ngIf="f.lastname.errors.required">Prénom manquant</small>
+                        </div>
+                    </div>
+
+                    <div class="element">
+                        <div class="lastname">
+                            <div class="label">
+                                <span>Téléphone</span>
+                                <span class="red-star">*</span>
+                            </div>
+                            <input type="text" placeholder="Entrez votre prénom" formControlName="phone">
+                        </div>
+                        <div *ngIf="isCartFormSubmitted && f.phone.errors" class="error-feedback">
+                            <small *ngIf="f.phone.errors.required">Téléphone manquant</small>
+                        </div>
+                    </div>
+
+                    <div class="element">
+                        <div class="email">
+                            <div class="label">
+                                <span>Email</span>
+                                <span class="red-star">*</span>
+                            </div>
+                            <input type="email" placeholder="Email de contact" formControlName="email">
+                        </div>
+                        <div *ngIf="isCartFormSubmitted && f.email.errors" class="error-feedback">
+                            <small *ngIf="f.email.errors.required">Email manquant</small>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            <button type="submit" >
+                <ng-container *ngIf="isCartFormSubmittedAndNotErrorOnClientSide; else defaultText">
+                    <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+                </ng-container>
+            </button>
+
+            </form>
+
+            <ng-template #defaultText> VALIDER MON PANIER</ng-template>
+
+        </div>
+    </div>
+</div>

@@ -12,16 +12,16 @@
     </select>
 
     <div class="infos">
-        <span class="title"> {{order?.name}} </span>
+        <h3 class="title"> {{order?.name}} </h3>
         <div class="accompaniment" *ngIf="order?.accompaniment">
             <span class="header">Accompagnement</span>
-            <span class="label"> {{order?.accompaniment}} </span>
+            <span class="label"> -> {{order?.accompaniment}} </span>
         </div>
 
         <div class="sauces" *ngIf="(order?.sauces && order?.sauces!.length > 0 )">
             <span class="header">Sauce(s)</span>
             <ng-template ngFor let-sauce [ngForOf]="order?.sauces" >
-                <span class="label"> {{sauce}} </span>
+                <span class="label"> -> {{sauce}} </span>
             </ng-template>
         </div>
         

@@ -15,4 +15,8 @@ export class ProductsService {
     return this.http.get<Product[]>("http://localhost:3000/product/"+activeMenuLink);
   }
 
+  getRecommandedPlats(): Observable<Product[]>{
+    return this.http.get<Product[]>("http://localhost:3000/product/"+'recommanded');
+  }
+
 }
