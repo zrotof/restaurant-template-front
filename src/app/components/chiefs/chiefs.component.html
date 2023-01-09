@@ -1,0 +1,79 @@
+<div class="chiefs">
+    <div class="header">
+        <h1 class="title">Découvrez</h1>
+        <h3 class="subtitle">Nos Chefs</h3>
+    </div>
+
+        <div class="infinite-swiper">
+              <swiper
+              
+                [spaceBetween]="5"
+                [loop]="true"
+                [autoplay]="{
+                  delay: 8000,
+                  disableOnInteraction: true
+                }"
+      
+                [breakpoints]="{
+                  '600': {
+                    slidesPerView: 2,
+                    spaceBetween: 10
+                  },
+                  '630': {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                  },
+                  '670': {
+                    slidesPerView: 2,
+                    spaceBetween: 50
+                  },
+                  '950': {
+                    slidesPerView: 3,
+                    spaceBetween: 10
+                  },
+                  '1100': {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                  },
+                  '1230': {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                  },
+                  '1400': {
+                    slidesPerView: 3,
+                    spaceBetween: 50
+                  }
+                }"
+                
+                class="mySwiper"
+                #swiper
+              >
+      
+              <ng-template *ngFor="let chief of chiefsList" swiperSlide>
+                  <div class="mySlide">
+                        <img src={{chief.image}} alt="">
+                        <span class="name">{{chief.name}}</span>
+                        <ul class="socials">
+                            <li>
+                                <a href="" target="_blank"><i class="pi pi-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="" target="_blank"><i class="pi pi-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="" target="_blank"><i class="pi pi-youtube"></i></a>
+                            </li>
+                            <li>
+                                <a href="" target="_blank"><i class="pi pi-instagram"></i></a>
+                            </li>
+                        </ul>
+                  </div>
+              </ng-template>
+              </swiper>
+      
+              <div class="arrows my-container">
+                  <button aria-label="navigation à droite" class="prev" (click)="arrowSlide(-1)"><i class="pi pi-arrow-left"></i></button>
+                  <button aria-label="navigation à gauche" class="next" (click)="arrowSlide(1)"><i class="pi pi-arrow-right"></i></button>
+              </div>
+          </div>
+</div>

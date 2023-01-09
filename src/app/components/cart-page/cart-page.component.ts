@@ -30,11 +30,13 @@ export class CartPageComponent implements OnInit {
         firstname:["", Validators.required],
         phone:[""],
         email: ["", [Validators.required, Validators.email]]
-      }); }
+      }); 
+  }
 
   ngOnInit(): void {
     this.getOrderedItems();
     this.getTotalPrice();
+    
   }
 
   getOrderedItems(){
@@ -45,51 +47,16 @@ export class CartPageComponent implements OnInit {
 
   get f() { return this.cartForm.controls; }
 
+  editProductQuantity(item: OrderItem, quantity: number){
 
+    item.quantity += quantity;
 
-  minusProduct(item: OrderItem){
+    if(item.quantity == 0){
+      this.addOrderService.deleteOrderedItem(item);
+      return ;
+    }
 
-      this.itemList.items.map((item)  =>{
-/*        if(item.quantity > 1)
-
-        if((item.id === productId) && (item.size === size)){
-  
-          item.itemQuantity -= 1;
-  
-          this.addOrderService.setCartItemFromCartPage({
-            productId: productId,
-            quantity: item.itemQuantity,
-            size: item.size
-          });
-        }
-  */
-        return item ;      
-      })
-  
-    
-  }
-
-
-  plusProduct(item: OrderItem){
-
-    this.itemList.items.map((item)  =>{
-
-/*       if(item.quantity < 100)
-   
-      if((item.id === productId) && (item.size === size)){
-
-        item.itemQuantity += 1;
-
-        this.addOrderService.setCartItemFromCartPage({
-          productId: productId,
-          quantity: item.itemQuantity,
-          size: item.size
-        });
-      }
-*/
-      return item ;      
-    })
-
+    this.addOrderService.updateOrderedItemQuantityFromCart(item);
   }
 
   getTotalPrice(){
@@ -108,32 +75,26 @@ export class CartPageComponent implements OnInit {
     })
   }
 
-
   deleteProduct(itemToRemove: OrderItem){
 
     //Remove item from the displayed list
     const indexOfItemIfExistOnOrderedItemList = this.itemList.items.findIndex(item => (
       (item.name === itemToRemove.name) &&
-      (item.accompaniment === itemToRemove.accompaniment) &&
-      this.compareTwoStringArray(item.sauces, itemToRemove.sauces)
-      
+      (item.mandatory === itemToRemove.mandatory) &&
+      this.compareTwoStringArray(item.optionals, itemToRemove.optionals)
     )); 
     if(indexOfItemIfExistOnOrderedItemList != -1){
-      console.log(this.itemList)
       //remove from the cart page
       this.itemList.items.splice(indexOfItemIfExistOnOrderedItemList,1);
-      console.log(this.itemList)
 
       //remove from the local storage
-
       localStorage.setItem('order', JSON.stringify(this.itemList));
       this.addOrderService.order$.next(this.itemList);
     }
   }
 
-
   onValidateCart(){
-   // this.router.navigate(['panier/livraison']);
+    //this.router.navigate(['panier/livraison']);
 
     return;
   }
@@ -146,8 +107,21 @@ export class CartPageComponent implements OnInit {
     secondArray.sort();
 
     //We compare sorted array
-
     return JSON.stringify(firstArray) === JSON.stringify(secondArray);
+  }
+
+  concatOptionals(param: string[]): string{
+
+    let newOptionals = '';
+      param.forEach((optional, index) =>{
+        if(index == param.length - 1){
+          newOptionals += optional
+        }
+        else{
+          newOptionals += optional+ ", "
+        }
+      })
+    return newOptionals;
   }
 
 }

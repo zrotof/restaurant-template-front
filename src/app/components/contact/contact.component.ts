@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MessageService } from 'primeng/api';
+import { MailService } from 'src/app/services/mail/mail.service';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
+  providers:[MessageService]
 })
 export class ContactComponent implements OnInit {
 
@@ -22,20 +26,15 @@ overlays: any[] | undefined;
 
 constructor(
   private fb: FormBuilder, 
-  //private mailService: MailsService,
-  //private messageService: MessageService,
-  //public dialogService: DialogService
+  private mailService: MailService,
+  private messageService: MessageService
   ) { 
 
   this.contactForm= this.fb.group({
-    civility: ["", Validators.required],
-    firstname: ["", Validators.required],
-    lastname:["", Validators.required],
+    name: ["", Validators.required],
     email: ["", [Validators.required, Validators.email]],
-    phone: [""],
-    subject:["", Validators.required],
-    message: ["", Validators.required],
-    preference: ["email"]
+    phone: ["", Validators.required,],
+    message: ["", Validators.required]
   });
 }
   ngOnInit(): void {
@@ -59,8 +58,6 @@ constructor(
   onReset() {
     this.isContactFormSubmitted = false;
     this.contactForm.reset();
-    this.f.preference.setValue("email");
-    this.f.preference.updateValueAndValidity();
   }
 
 
@@ -69,31 +66,24 @@ constructor(
 
     this.isContactFormSubmitted = true;
 
-    //Handling error selecting to be shared by phone but not enter phone number
-    if( this.f.preference.value === "phone"){
-      if(!this.f.phone.value){
-        //If the value is not set we assign an error to this field
-        this.f.phone.setValidators([Validators.required])
-        this.f.phone.updateValueAndValidity();
-      }
-    }
-    else{
-      this.f.phone.clearValidators();
-      this.f.phone.updateValueAndValidity();
-    }
-
     // stop here if form is invalid
     if (this.contactForm.invalid) {
       return;
     }
 
-    this.isContactFormSubmittedAndNotErrorOnClientSide = true;
+    this.messageService.add({severity:'success', detail: "Message transmis avec succès."});
+    this.onReset();
 /*
-    this.mailService.sendContactMail(JSON.stringify(this.contactForm.value)).pipe(finalize(() => this.isContactFormSubmittedAndNotErrorOnClientSide = false),
+    this.isContactFormSubmittedAndNotErrorOnClientSide = true;
+
+    this.mailService.sendContactMail(JSON.stringify(this.contactForm.value)).pipe(
+      finalize(() => 
+        this.isContactFormSubmittedAndNotErrorOnClientSide = false
+      )
     ).subscribe((resp: any) =>{
       
       if(resp['message'] === "success"){
-        this.messageService.add({severity:'success', detail: "Message envoyé avec succès."});
+        this.messageService.add({severity:'success', detail: "Message transmis avec succès."});
         this.onReset();
       }
 
@@ -102,11 +92,10 @@ constructor(
       }
       
     });
-
+    */
   }
-  */
 
+  
 }
 
 
-}

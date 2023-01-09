@@ -6,8 +6,9 @@ export class OrderItem{
 
     name?: string ;
     quantity!: number ;
-    accompaniment?: string;
-    sauces!: string[] ;
+    mandatory?: string;
+    optionals!: string[] ;
     price!: number;
     image?:string;
+    ref?:string;
 }

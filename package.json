@@ -21,9 +21,11 @@
     "primeicons": "^5.0.0",
     "primeng": "^13.4.1",
     "rxjs": "~6.6.0",
+    "swiper": "^8.4.4",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
+  
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.2.6",
     "@angular/cli": "~12.2.6",

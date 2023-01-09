@@ -47,8 +47,9 @@ selectQuantityArray: number[] = new Array<number>(50)  ;
       name: this.order?.name,
       price: this.order!.price,
       quantity: valueClicked,
-      accompaniment: this.order?.accompaniment,
-      sauces: this.order!.sauces
+      mandatory: this.order?.mandatory,
+      optionals: this.order!.optionals,
+      ref: this.order?.ref
     }
 
     this.orderService.updateOrderedItemQuantityFromCart(newQuantityOrdered);

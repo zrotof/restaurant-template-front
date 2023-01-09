@@ -13,18 +13,24 @@
 
     <div class="infos">
         <h3 class="title"> {{order?.name}} </h3>
-        <div class="accompaniment" *ngIf="order?.accompaniment">
-            <span class="header">Accompagnement</span>
-            <span class="label"> -> {{order?.accompaniment}} </span>
+        <div class="mandatory" *ngIf="order?.mandatory">
+            <span class="header" *ngIf="order?.ref === 'fu_01';else other_mandatory_content">Accompagnement</span>
+            <span class="label"> -> {{order?.mandatory}} </span>
         </div>
 
-        <div class="sauces" *ngIf="(order?.sauces && order?.sauces!.length > 0 )">
-            <span class="header">Sauce(s)</span>
-            <ng-template ngFor let-sauce [ngForOf]="order?.sauces" >
-                <span class="label"> -> {{sauce}} </span>
+        <div class="optionals" *ngIf="(order?.optionals && order?.optionals!.length > 0 )">
+            <span class="header" *ngIf="order?.ref === 'fu_01';else other_optionals_content">Sauce(s)</span>
+            <ng-template ngFor let-optional [ngForOf]="order?.optionals" >
+                <span class="label"> -> {{optional}} </span>
             </ng-template>
         </div>
-        
+
+        <ng-template #other_mandatory_content>
+            <span class="header">Contenant</span>
+        </ng-template>
+        <ng-template #other_optionals_content>
+            <span class="header">Nappage</span>
+        </ng-template>
     </div>
 
     <span class="price"> {{ totalPrice | number: "1.2"}} € </span>

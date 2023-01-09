@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px;
+    width: 325px;
     margin: 20px 15px;
     padding: 20px;
     border-radius: 5px;
@@ -17,7 +17,7 @@
 
                     .service-title{
                         font-size: 1.2em;
-                        margin: 15px 0;
+                        margin: 15px 0 12px 0;
                     }
 
                     span{
@@ -28,7 +28,7 @@
                     .price{
                         font-weight: 500;
                         color: #E9121D;
-                        margin: 15px 0;
+                        margin: 10px 0;
                         font-size: 1.1em;
                         font-style: italic;
                     }
@@ -36,8 +36,8 @@
                     button{
                         outline: none;
                         border: none;
-                        border-radius: 5px;
-                        padding: 3px 25px;
+                        border-radius: 3px;
+                        padding: 3px 20px;
                         background-color: white;
                         border: 2px solid #303030;
                         color: black;

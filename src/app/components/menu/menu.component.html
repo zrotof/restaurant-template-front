@@ -3,7 +3,7 @@
     <div class="menu-header">
         <img src="../../../assets/contact/header-bg.jpeg" alt="">
         <div class="texts">
-            <h1>Nos MEnus </h1>
+            <h1>Nos Menus </h1>
             <span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</span>
         </div>
     </div>
@@ -11,20 +11,15 @@
     <div class="content content-container">
         
         <div class="menu-headers">
-            <ng-template ngFor let-menu [ngForOf]="menus"; let-index = "index"; let-first="first">
-                <button *ngIf="first;else menuItem" class="active-menu" (click)="setActiveMenuAndGetData(index, menu.link)">{{menu.label}}</button>
-                <ng-template #menuItem>
-                    <button (click)="setActiveMenuAndGetData(index, menu.link)">{{menu.label}}</button>
-                </ng-template>
+            <ng-template ngFor let-menu [ngForOf]="menus">
+                <button (click)="setQueryParamsOnMenusItemsNavigation(menu.link)">{{menu.label}} <span>{{menu.count}}</span></button>
             </ng-template>
         </div>
 
         <div class="menu-content">
-
             <ng-template ngFor let-plat [ngForOf]="plats";>
                 <app-product-details [product] = "plat"></app-product-details>
             </ng-template>
-            
         </div>
     </div>
 </div>

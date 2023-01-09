@@ -8,5 +8,8 @@ export class Product {
     shortDescription?: string;
     longDescription?: string;
     ingredients?: string[];
-    combine?: boolean;
+    mandatoryChoices?: string[];
+    optionalChoices?: [];
+    combined?: boolean;
+    ref?: string; 
 }

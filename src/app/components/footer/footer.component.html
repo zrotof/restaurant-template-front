@@ -1,5 +1,60 @@
 <footer>
-    <div class="content my-container">
-        <small>© 2022 - MANGERTORIUM</small>
+    
+    <div class="top">
+        <div class="content my-container">
+            <div class="restaurant">
+                <a routerLink="/accueil" class="logo">
+                    <span>Food</span> Universe
+                </a>
+
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+
+            <div class="carte">
+                <p>Notre Carte</p>
+                <ul>
+                    <li [routerLink]="['notre-carte']" [queryParams]="{menu: 'viandes'}">Nos Viandes</li>
+                    <li [routerLink]="['notre-carte']" [queryParams]="{menu: 'poissons'}">Nos Poissons</li>
+                    <li [routerLink]="['notre-carte']" [queryParams]="{menu: 'salades'}">Nos Salades</li>
+                    <li [routerLink]="['notre-carte']" [queryParams]="{menu: 'petit-dej'}">Nos Petits Dej</li>
+                    <li [routerLink]="['notre-carte']" [queryParams]="{menu: 'boissons'}">Nos Boissons</li>
+                    <li [routerLink]="['notre-carte']" [queryParams]="{menu: 'desserts'}">Nos Desserts</li>
+                </ul>
+            </div>
+
+            <div class="legals">
+                <p>Légals</p>
+                <ul>
+                    <li>Mesures sanitaires</li>
+                    <li>Mentions légales</li>
+                    <li>Politique de protection des données personnelles</li>
+                    <li>CGU</li>
+                </ul>
+            </div>
+
+            <div class="follow">
+                <p>Suivez-Nous</p>
+
+                <div class="social-medias">
+                    <a href="#" ><i class="pi pi-facebook"></i></a>
+                    <a href="#" ><i class="pi pi-twitter"></i></a>
+                    <a href="#" ><i class="pi pi-youtube"></i></a>
+                    <a href="#" ><i class="pi pi-instagram"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="middle">
+        <div class="content my-container">
+            <small>© 2023 - Food Universe</small>
+        </div>
+    </div>
+
+    <div class="manger-bouger">
+        <div class="content my-container">
+            <p>Pour votre santé, mangez au moins cinq fruits et légumes par jour. <a target="_blank" href="https://www.mangerbouger.fr/"> www.mangerbouger.fr</a></p>
+        </div>
+    </div>
+
 </footer>

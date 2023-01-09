@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddProductCartComponent } from './add-product-cart.component';
+import { OrderFormTypeTwoComponent } from './order-form-type-two.component';
 
-describe('AddProductCartComponent', () => {
-  let component: AddProductCartComponent;
-  let fixture: ComponentFixture<AddProductCartComponent>;
+describe('OrderFormTypeTwoComponent', () => {
+  let component: OrderFormTypeTwoComponent;
+  let fixture: ComponentFixture<OrderFormTypeTwoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddProductCartComponent ]
+      declarations: [ OrderFormTypeTwoComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddProductCartComponent);
+    fixture = TestBed.createComponent(OrderFormTypeTwoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

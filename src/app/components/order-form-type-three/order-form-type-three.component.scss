@@ -1,0 +1,249 @@
+.p-dialog-mask{
+    z-index: 6 !important;
+}
+    .p-dialog .p-dialog-content {
+        padding: 0 ;
+        border-radius: 5px;
+    }
+
+    .product-modal-details{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        height: 95vh;
+        padding-bottom: 80px;
+
+        .red-star{
+            color: red;
+            font-size: 0.7em !important;
+        }
+
+        .option-title{
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+
+        .indicates{
+            font-size: 0.85em;
+            font-style: italic;
+            color: #4f4f4f;
+            margin-bottom: 8px;
+            margin-top: 2px;
+        }
+    
+        .close-modal{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            width: fit-content;
+            height: fit-content;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+    
+        .close-modal:hover{
+            background-color: red;
+            color: white;
+            
+        }
+    
+        img{
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+    
+        .infos{
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+    
+            h4{
+                font-size: 1.5em;
+                margin-bottom: 10px;
+            }
+    
+            .label{
+                font-weight: 550;
+                margin-top: 15px;
+            }
+    
+            .ingredients{
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 5px;
+                justify-content: center;
+    
+                .ingredient{
+                    padding: 3px 7px;
+                    background: rgb(232, 232, 232);
+                    color: #5d5d5d;
+                    margin: 5px 5px 0 0;
+                    font-size: 0.9em;
+                }
+            }
+        }
+    
+        form{
+            padding: 20px 20px 150px 20px;
+    
+            .mandatories{
+                display:flex;
+                flex-direction: column;
+                padding: 25px 0;
+                border-top: 1px solid black;
+                width: 100%;
+    
+                .mandatory{
+                    display: flex;
+                    align-items: center;
+                    margin: 3px 0;
+                    width: fit-content;
+                    padding-left: 15px;
+    
+                    .p-radiobutton .p-radiobutton-box.p-highlight {
+                        border-color: #115F98;
+                        background: #115F98;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+    
+                    label{
+                        margin-left: 10px;
+                        font-size: 0.9em;
+                        cursor: pointer;
+                    }
+                }
+
+                .error-feedback {
+                    width: fit-content;
+                    margin-top: 1.25rem;
+                    color: #dc3545;
+                    background: #ff00001a;
+                    padding: 5px 10px;
+                }
+            }
+    
+            .optionals{
+                display:flex;
+                flex-direction: column;
+                padding: 25px 0;
+                border-top: 1px solid black;
+                width: 100%;
+    
+                .optional{
+                    display: flex;
+                    flex-direction: column;
+                    width: fit-content;
+                    padding-left: 15px;
+    
+    
+                    li{
+                        display: flex;
+                        margin: 3px 0;
+    
+                        .checkbox-round {
+                            width: 20px;
+                            height: 20px;
+                            background-color: white;
+                            border-radius: 50%;
+                            vertical-align: middle;
+                            border: 2px solid #ddd;
+                            appearance: none;
+                            -webkit-appearance: none;
+                            outline: none;
+                            cursor: pointer;
+                        }
+                        
+                        .checkbox-round:checked {
+                            border: 4.5px solid  #115F98;
+                        }
+    
+                        label{
+                            margin-left: 10px;
+                            font-size: 0.9em;
+                            cursor: pointer;
+                        }
+    
+                    }
+    
+                }
+            }
+    
+            .adding-cart-quantity{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                border-top: 1px solid rgb(0 0 0 / 9%);
+                padding: 15px 20px 20px 20px;
+                width: 100%;
+                height: fit-content;
+                background: white;
+    
+                .quantity{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 15px;
+                    font-size: 1.1em;
+    
+                    span{
+                        width: 40px;
+                        margin: 0 7px;
+                        text-align: center;
+                        font-weight: 550;
+                    }
+    
+                    .pi{
+                        cursor: pointer;
+                        border-radius: 50%;
+                        background-color: #e1e1e1;
+                        padding: 7px;
+                        font-size: 0.7em;
+                    }
+    
+                    .pi:hover{
+                        background-color: black;
+                        color: white;
+                    }
+    
+    
+                }
+    
+                .submit{
+                    border: none;
+                    outline: none;
+                    background: white;
+                    border: 2px solid #303030;
+                    color: black;
+                    border-radius: 2px;
+                    width: 100%;
+                    padding: 11px 0;
+                    font-weight: 500;
+                    font-size: 1.05em;
+                    cursor: pointer;
+                }
+    
+                .submit:hover{
+                    background: green;
+                    border: 2px solid green;
+                    color: white;
+                }
+            }
+        }
+    
+    }
+
+

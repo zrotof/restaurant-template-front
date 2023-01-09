@@ -1,4 +1,12 @@
 <div class="cart">
+
+    <button class="nav-cart" (click)="displaySidebar()">
+        <i class="pi pi-shopping-cart"></i>
+        <span class="number">
+            {{numberOfItems}}
+        </span>
+    </button>
+    
     <p-sidebar styleClass="cart-side-bar" [(visible)]="siderbarDisplayed" position="right" [blockScroll]=true >
         
         <ng-container *ngIf="!isCartEmpty; else emptyCart">
@@ -8,7 +16,7 @@
             <div class="items">
                 <ng-template ngFor let-orderedProduct [ngForOf]="orderedProductList?.items"; let-index = "index"; let-first="first">
                     <app-order-item [order]="orderedProduct">
-                        <span>{{orderedProduct.name}}</span>
+                       
                     </app-order-item>
                 </ng-template>
             </div>
@@ -33,14 +41,4 @@
         </ng-template>
         
     </p-sidebar>
-
-
-    
-    <button class="nav-cart" (click)="displaySidebar()">
-        <i class="pi pi-shopping-cart"></i>
-        <span class="label">Panier</span>
-        <span class="items">
-            {{numberOfItems}}
-        </span>
-    </button>
 </div> 

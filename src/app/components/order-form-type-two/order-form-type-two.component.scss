@@ -13,7 +13,12 @@
         width: 500px;
         height: 95vh;
         padding-bottom: 80px;
-    
+
+        .red-star{
+            color: red;
+            font-size: 0.7em !important;
+        }
+        
         .close-modal{
             display: flex;
             align-items: center;
@@ -60,6 +65,7 @@
                 display: flex;
                 flex-wrap: wrap;
                 margin-top: 5px;
+                justify-content: center;
     
                 .ingredient{
                     padding: 3px 7px;
@@ -70,98 +76,7 @@
                 }
             }
         }
-    
-        form{
-            padding: 20px 20px 150px 20px;
-    
-            .accompaniments{
-                display:flex;
-                flex-direction: column;
-                padding: 25px 0;
-                border-top: 1px solid black;
-                width: 100%;
-    
-                span{
-                    font-weight: bold;
-                    font-size: 1.1em;
-                    padding-bottom: 8px;
-                }
-    
-                .accompaniment{
-                    display: flex;
-                    align-items: center;
-                    margin: 3px 0;
-                    width: fit-content;
-                    padding-left: 15px;
-    
-                    .p-radiobutton .p-radiobutton-box.p-highlight {
-                        border-color: #115F98;
-                        background: #115F98;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-    
-                    label{
-                        margin-left: 10px;
-                        font-size: 0.9em;
-                        cursor: pointer;
-                    }
-                }
-            }
-    
-            .sauces{
-                display:flex;
-                flex-direction: column;
-                padding: 25px 0;
-                border-top: 1px solid black;
-                width: 100%;
-    
-                span{
-                    font-weight: bold;
-                    font-size: 1.1em;
-                    padding-bottom: 8px;
-                }
-    
-                .sauce{
-                    display: flex;
-                    flex-direction: column;
-                    width: fit-content;
-                    padding-left: 15px;
-    
-    
-                    li{
-                        display: flex;
-                        margin: 3px 0;
-    
-                        .checkbox-round {
-                            width: 20px;
-                            height: 20px;
-                            background-color: white;
-                            border-radius: 50%;
-                            vertical-align: middle;
-                            border: 2px solid #ddd;
-                            appearance: none;
-                            -webkit-appearance: none;
-                            outline: none;
-                            cursor: pointer;
-                        }
-                        
-                        .checkbox-round:checked {
-                            border: 4.5px solid  #115F98;
-                        }
-    
-                        label{
-                            margin-left: 10px;
-                            font-size: 0.9em;
-                            cursor: pointer;
-                        }
-    
-                    }
-    
-                }
-            }
-    
+
             .adding-cart-quantity{
                 display: flex;
                 flex-direction: column;
@@ -226,8 +141,6 @@
                     color: white;
                 }
             }
-        }
-    
     }
 
 

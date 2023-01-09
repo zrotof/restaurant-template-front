@@ -9,9 +9,9 @@ import { CartPageComponent } from './components/cart-page/cart-page.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/accueil', pathMatch: 'full' },
-  {path: 'accueil', component : HomeComponent},
-  {path: 'menus', component : MenuComponent},
+  {path: '', component : HomeComponent},
+  {path: 'accueil', redirectTo: '', pathMatch: 'full' },
+  {path: 'notre-carte', component : MenuComponent},
   {path: 'a-propos', component : AboutComponent},
   {path: 'contact', component : ContactComponent},
   {path: 'panier', component : CartPageComponent},

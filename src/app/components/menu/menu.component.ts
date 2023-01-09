@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Params, Router } from '@angular/router';
+import { Observable, Subscription } from 'rxjs';
 import { Product } from 'src/app/models/product';
 import { ProductsService } from 'src/app/services/products/products.service';
 
@@ -7,76 +9,113 @@ import { ProductsService } from 'src/app/services/products/products.service';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent implements OnInit{
+export class MenuComponent implements OnInit, OnDestroy{
 
   plats: Product[] = [];
-
-
-  constructor(private productService: ProductsService) { }
-
   menus : any;
+  routeSubscription!: Subscription;
+
+  constructor(
+    private productService: ProductsService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute) { }
 
 
+  async ngOnInit() {
+    await this.initMenus();
 
-  ngOnInit(): void {
-    this.initMenus();
-    this.setActiveMenuAndGetData(0, 'meals');
+    this.routeSubscription = this.activatedRoute.queryParams.subscribe(
+      param =>{
+        if(!param.menu){
+          this.setQueryParamsOnMenusItemsNavigation('viandes');
+          this.setActiveMenu(0);
+          this.getFoodsOrDrinks('viandes');
+        }else{
+          const index = this.menus.findIndex((menu: { link: string; }) => menu.link === param.menu);
+          if(index == -1){
+            this.setQueryParamsOnMenusItemsNavigation('viandes');
+            this.setActiveMenu(0);
+            this.getFoodsOrDrinks('viandes');
+          }
+          else{
+            this.setQueryParamsOnMenusItemsNavigation(param.menu);
+            this.setActiveMenu(index);
+            this.getFoodsOrDrinks(param.menu);
+          }
+        }
+      }
+    )
+
   }
 
   initMenus(){
     this.menus =  [
       {
         label: "Viandes",
-        link: "meals"
+        link: "viandes",
+        count: 4
       },
       {
         label: "Poissons",
-        link: "fishes"
+        link: "poissons",
+        count: 2
 
       },
       {
-        label: "Légumes",
-        link: "vegetables"
+        label: "Salades",
+        link: "salades",
+        count: 4
 
       },
       {
         label: "Accompagnements",
-        link: "accompaniments"
+        link: "accompagnements",
+        count: 3
       },
       {
         label: "Petits dej",
-        link: "breakfasts"
+        link: "petit-dej",
+        count: 3
       },
       {
         label: "Boissons",
-        link: "drinks"
+        link: "boissons",
+        count: 2
       },
       {
-        label: "Dessert",
-        link: "deserts"
+        label: "Desserts",
+        link: "desserts",
+        count: 4
       }
   
     ]  
-  }
-
-  setActiveMenuAndGetData(activeMenuNumber: number, activeMenuLink: string){
-    this.setActiveMenu(activeMenuNumber);
-    this.getFoodsOrDrinks(activeMenuLink);
   }
 
   setActiveMenu(param: number){
 
     let menusArray = <NodeListOf<HTMLElement>>document.querySelectorAll(".menu-headers button");
 
-    if(menusArray[param]?.classList.contains('active-menu')){
-      return;
-    }
-
     menusArray.forEach(element => {
         element.classList.remove("active-menu");
     });
 
     menusArray[param]?.classList.add('active-menu');
+  }
+
+  setQueryParamsOnMenusItemsNavigation( param: string = 'viandes'){
+
+    const queryParams = {
+      menu : param
+    }
+
+    this.router.navigate(
+      [],
+      {
+        relativeTo: this.activatedRoute,
+        queryParams: queryParams, 
+        queryParamsHandling: 'merge'
+      }
+    )
   }
 
   getFoodsOrDrinks(param: string){
@@ -88,6 +127,9 @@ export class MenuComponent implements OnInit{
       
   }
 
+  ngOnDestroy(): void {
+    this.routeSubscription.unsubscribe();
+  }
   
 
 }

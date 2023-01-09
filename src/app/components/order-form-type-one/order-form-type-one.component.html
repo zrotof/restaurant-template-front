@@ -1,0 +1,63 @@
+<div class="product-modal-details">
+    <button class="close-modal" (click)="closeModal(product)">
+        <i class="pi pi-times"></i>
+    </button>
+    <img src={{product.imageBg}} alt="">
+    <div class="infos">
+        <h4>{{product.name}}</h4>
+        <span> {{product.shortDescription}} </span>
+        <span class="label">Ingredients</span>
+
+        <div class="ingredients">
+            <ng-template ngFor let-ingredient [ngForOf]="product.ingredients">
+                <span class="ingredient">{{ingredient}}</span>
+            </ng-template>
+        </div>
+    </div>
+
+    <form [formGroup]="orderedProductForm" (ngSubmit)="onSubmitOrderOneForm()">
+
+        <div *ngIf="product.mandatories" class="mandatories">
+
+            <p class="option-title">Accompagnements <span class="red-star">*</span></p>
+            <p class="indicates" >Vous ne pouvez en choisir qu'un seul</p>
+            <ng-template ngFor let-mandatory [ngForOf]="product.mandatories">
+                <div class="mandatory">
+                    <p-radioButton [inputId]="mandatory" [value]="mandatory" formControlName="selectedMandatory"></p-radioButton>
+                    <label [for]="mandatory">{{mandatory}}</label>
+                </div>
+            </ng-template>
+
+            <div *ngIf="isOrderFormSubmitted && f.selectedMandatory.errors" class="error-feedback">
+                <small *ngIf="f.selectedMandatory.errors.required">Choisissez un accompagnement</small>
+            </div>
+            
+        </div>
+
+
+        <div  *ngIf="product.optionals" class="optionals">
+
+            <p class="option-title">Sauces</p>
+            <p class="indicates" >Vous pouvez en choisir plusieurs</p>
+            <ul class="optional" formArrayName="selectedOptionals">
+                <li [formGroupName]="i" *ngFor="let optional of f.selectedOptionals.value; let i = index">
+                    <input [id]="optional.name" type="checkbox" formControlName="checked" class="checkbox-round" />
+                    <label [for]="optional.name">{{optional.name}}</label>
+                </li>
+            </ul>
+            
+        </div>
+
+
+        <div class="adding-cart-quantity">
+            <div class="quantity">
+                <i  (click)="setQuantity(-1)" class="pi pi-minus"></i>
+                <span>{{orderedQuantity}}</span>
+                <i (click)="setQuantity(1)" class="pi pi-plus"></i>
+            </div>
+            <button class="submit" type="submit"> {{totalPrice | number : '1.2'}} €</button>
+        </div>
+    </form>
+
+</div>
+

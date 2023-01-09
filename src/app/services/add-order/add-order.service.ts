@@ -17,12 +17,18 @@ export class AddOrderService {
     const order = this.getOrder();
 
     if(!order){
-      const initialOrder ={
-        items: []
-      }
-      const initialOrderJson = JSON.stringify(initialOrder);
-      localStorage.setItem('order',initialOrderJson);
+      this.resetCart();
     }
+  }
+
+  resetCart(){
+
+    const initialOrder = {
+      items: []
+    }
+
+    const initialOrderJson = JSON.stringify(initialOrder);
+    localStorage.setItem('order',initialOrderJson);
   }
 
   getOrder(): Order{
@@ -38,8 +44,8 @@ export class AddOrderService {
     const orderedItemAlreadyExist = order.items.find(
       (item) => (
         item.name === orderItem.name && 
-        item.accompaniment === orderItem.accompaniment &&
-        this.compareTwoStringArray(item.sauces, orderItem.sauces)
+        item.mandatory === orderItem.mandatory &&
+        this.compareTwoStringArray(item.optionals, orderItem.optionals)
       )
     )
     
@@ -49,8 +55,8 @@ export class AddOrderService {
 
         if(
           item.name === orderItem.name && 
-          item.accompaniment === orderItem.accompaniment &&
-          this.compareTwoStringArray(item.sauces, orderItem.sauces)
+          item.mandatory === orderItem.mandatory &&
+          this.compareTwoStringArray(item.optionals, orderItem.optionals)
           ){
 
           item.quantity = item.quantity + orderItem.quantity;
@@ -78,8 +84,8 @@ export class AddOrderService {
     const orderedItemAlreadyExist = order.items.find(
       (item) => (
         item.name === orderItem.name && 
-        item.accompaniment === orderItem.accompaniment &&
-        this.compareTwoStringArray(item.sauces, orderItem.sauces)
+        item.mandatory === orderItem.mandatory &&
+        this.compareTwoStringArray(item.optionals, orderItem.optionals)
       )
     )
 
@@ -91,8 +97,8 @@ export class AddOrderService {
 
         if(
           item.name === orderItem.name && 
-          item.accompaniment === orderItem.accompaniment &&
-          this.compareTwoStringArray(item.sauces, orderItem.sauces)
+          item.mandatory === orderItem.mandatory &&
+          this.compareTwoStringArray(item.optionals, orderItem.optionals)
           ){
 
           item.quantity = orderItem.quantity;
@@ -116,8 +122,8 @@ export class AddOrderService {
     const indexOfProductInOrder = order.items.findIndex(
       item => (
         item.name === orderedItem?.name && 
-        item.accompaniment === orderedItem?.accompaniment &&
-        this.compareTwoStringArray(item.sauces, orderedItem!.sauces)
+        item.mandatory === orderedItem?.mandatory &&
+        this.compareTwoStringArray(item.optionals, orderedItem!.optionals)
       )
     );
 
@@ -128,8 +134,6 @@ export class AddOrderService {
     }
 
   }
-
-
 
   compareTwoStringArray(firstArray: string[], secondArray: string[]){
 

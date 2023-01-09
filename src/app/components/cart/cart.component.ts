@@ -41,7 +41,7 @@ export class CartComponent implements OnInit {
 
   openMenuPage(){
     this.displaySidebar();
-    this.router.navigateByUrl("/menus");
+    this.router.navigateByUrl("/notre-carte");
   }
 
   getTotalNumberOfItemsAndTotalPrice(){

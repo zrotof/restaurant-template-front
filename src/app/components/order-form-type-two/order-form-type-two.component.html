@@ -1,0 +1,28 @@
+<div class="product-modal-details">
+    <button class="close-modal" (click)="closeModal(product)">
+        <i class="pi pi-times"></i>
+    </button>
+    <img src={{product.imageBg}} alt="">
+    <div class="infos">
+        <h4>{{product.name}}</h4>
+        <span> {{product.shortDescription}} </span>
+        <span class="label">Ingredients</span>
+
+        <div class="ingredients">
+            <ng-template ngFor let-ingredient [ngForOf]="product.ingredients">
+                <span class="ingredient">{{ingredient}}</span>
+            </ng-template>
+        </div>
+    </div>
+
+        <div class="adding-cart-quantity">
+            <div class="quantity">
+                <i  (click)="setQuantity(-1)" class="pi pi-minus"></i>
+                <span>{{orderedQuantity}}</span>
+                <i (click)="setQuantity(1)" class="pi pi-plus"></i>
+            </div>
+            <button (click)="onAddToCart()" class="submit" type="submit"> {{totalPrice | number : '1.2'}} €</button>
+        </div>
+
+</div>
+
