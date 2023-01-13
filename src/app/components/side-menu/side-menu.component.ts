@@ -18,6 +18,10 @@ export class SideMenuComponent implements OnInit {
    //Handling click on burger menu
    onBurgerMenu(){
     this.sideMenuDisplayed = !this.sideMenuDisplayed;
-}
+  }
+
+  onmenuItemClicked(){
+    this.sideMenuDisplayed = false;
+  }
 
 }

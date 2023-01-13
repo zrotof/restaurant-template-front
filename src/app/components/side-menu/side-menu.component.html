@@ -15,16 +15,16 @@
             <nav>
                 <ul>
                     <li>
-                        <a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"  routerLink="/">Accueil</a>
+                        <a (click)="onmenuItemClicked()" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"  routerLink="/">Accueil</a>
                     </li>
                     <li>
-                        <a routerLinkActive="active-link" routerLink="/a-propos">Le Restaurant</a>
+                        <a (click)="onmenuItemClicked()" routerLinkActive="active-link" routerLink="/a-propos">Le Restaurant</a>
                     </li>
                     <li>
-                        <a routerLinkActive="active-link" routerLink="/notre-carte">Notre Carte</a>
+                        <a (click)="onmenuItemClicked()" routerLinkActive="active-link" routerLink="/notre-carte">Notre Carte</a>
                     </li>
                     <li>
-                        <a routerLinkActive="active-link" routerLink="/contact">Nous Contacter</a>
+                        <a (click)="onmenuItemClicked()" routerLinkActive="active-link" routerLink="/contact">Nous Contacter</a>
                     </li>
                 </ul>
             </nav>
