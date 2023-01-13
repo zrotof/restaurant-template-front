@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Params, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
+import { MiniHero } from 'src/app/models/mini-hero';
 import { Product } from 'src/app/models/product';
 import { ProductsService } from 'src/app/services/products/products.service';
 
@@ -15,6 +16,8 @@ export class MenuComponent implements OnInit, OnDestroy{
   menus : any;
   routeSubscription!: Subscription;
 
+  miniHero !: MiniHero;
+  
   constructor(
     private productService: ProductsService,
     private router: Router,
@@ -22,6 +25,7 @@ export class MenuComponent implements OnInit, OnDestroy{
 
 
   async ngOnInit() {
+    this.initMiniHero();
     await this.initMenus();
 
     this.routeSubscription = this.activatedRoute.queryParams.subscribe(
@@ -46,6 +50,14 @@ export class MenuComponent implements OnInit, OnDestroy{
       }
     )
 
+  }
+
+  initMiniHero(){
+    this.miniHero = {
+      title: "Notre Carte",
+      text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+      image: "../../../assets/img/contact/header-bg.jpeg"
+    }
   }
 
   initMenus(){

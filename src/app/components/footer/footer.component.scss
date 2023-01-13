@@ -17,12 +17,13 @@ footer{
             width: 100%;
             padding-top: 30px;
             padding-bottom: 30px;
-
+            flex-wrap: wrap;
 
             .restaurant{
                 display: flex;
                 flex-direction: column;
                 width: 300px;
+                margin-top: 30px;
 
                 .logo{
                     color: red;
@@ -46,6 +47,7 @@ footer{
                 display: flex;
                 flex-direction: column;
                 width: 200px;
+                margin: 30px 20px 0 20px;
 
                 p{
                     white-space: nowrap;
@@ -74,6 +76,7 @@ footer{
                 display: flex;
                 flex-direction: column;
                 width: 200px;
+                margin-top: 30px;
 
                 p{
                     white-space: nowrap;
@@ -117,6 +120,7 @@ footer{
             width: 100%;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
 
             small{
                 width: 100%;
@@ -140,7 +144,8 @@ footer{
             width: 100%;
             padding-top: 15px;
             padding-bottom: 15px;
-
+            flex-wrap: wrap;
+            
             p{
                 text-align: center;
                 width: 100%;
@@ -152,6 +157,65 @@ footer{
                     margin-left: 5px;
                     color: #264f36;
                     cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 880px){
+    footer{
+        .top{
+            .content{
+                
+                .restaurant, .carte, .legals, .follow{
+                   margin: 30px 0 0 0;
+                   width: 50%;
+                }
+
+                .carte, .follow{
+                    align-items: flex-end;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 510px){
+    footer{
+        .top{
+            .content{
+                
+                .restaurant{
+                    width: 100%;
+                }
+
+                .carte, .legals, .follow{
+                   margin: 30px 0 0 0;
+                   width: 50%;
+                }
+
+                .carte, .follow{
+                    align-items: flex-start;
+                }
+
+                .follow{
+                    align-items: flex-start;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 490px){
+    footer{
+        margin-top: 80px;
+        .top{
+            .content{
+                
+                .restaurant, .carte, .legals, .follow{
+                    width: 100%;
                 }
             }
         }

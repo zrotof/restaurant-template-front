@@ -1,0 +1,247 @@
+.item{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    height: 120px;
+    width: 100%;
+    margin-bottom: 10px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    
+    img{
+        width: 150px;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .item-infos{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;         
+        padding: 10px 0 10px 10px;
+        width: calc(100% - 150px - 85px );
+
+        .item-details{
+            display: flex;
+            flex-direction: column;
+
+            .title{
+                margin-bottom: 5px;
+                font-weight: 550;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            .details{
+                display: flex;
+                flex-direction: column;
+
+                .accompaniment,
+                .optionals{
+                    span{
+                        font-size: 0.9em;
+                        color: #000000;
+                        font-style: normal;
+                        font-weight: 100;
+                        width: 100%;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                }
+
+                .optionals{
+                    display: flex;
+
+                    li{
+                        white-space: nowrap;
+                        margin: 0;
+                        font-size: 0.9em;
+                        color: #000000;
+                        font-style: normal;
+                        font-weight: 100;
+                    }
+                }
+            }
+
+        }
+
+        .item-price{
+            font-weight: 450;
+            font-size: 00.9em;
+        }
+
+        .item-size{
+            font-size: 0.8em;
+        }
+
+        .number-bloc{
+            display: flex;
+            align-items: center;
+            .buttons{
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid black;
+                cursor: pointer;
+
+                .pi{
+                    font-size: 0.8em;
+                    margin-top: 3px;
+                }
+            }
+
+            .buttons:hover{
+                background: black;
+                color: white;
+            }
+
+            .item-quantity{
+                padding: 0 5px;
+                width: 40px;
+                text-align: center;
+            }
+        }
+
+    }
+
+    .del-price{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 10px 10px 10px 0;
+        width: 85px;
+        white-space: nowrap;
+
+        .pi{
+            font-size: 1.1em;
+            cursor: pointer;
+            
+        }
+        .pi:hover{
+            font-size: 1.2em;
+            color: red;
+        }
+
+        .info-total-price{
+            font-size: 0.9em;
+            font-weight: 350;
+        }
+    }
+}
+
+@media all and (max-width: 500px){
+    .item{
+        position: relative;
+        box-shadow: none;
+        margin-bottom: 75px;
+
+        img{
+            width: 130px;
+            border-radius: 5px;
+        }
+    
+        .item-infos{       
+            padding: 10px 0 0 10px;
+            width: 100%;
+            margin-top: 20px;
+    
+            .item-details{
+                display: flex;
+                flex-direction: column;
+    
+                .title{
+                    white-space: unset;
+                    font-size: 0.9em;
+                }
+    
+                .details{
+                    .accompaniment,
+                    .optionals{
+                        span{
+                            font-size: 0.85em;
+                            white-space: unset;
+                        }
+                    }
+    
+                    .optionals{
+                        display: flex;
+    
+                        li{
+                            white-space: nowrap;
+                            margin: 0;
+                            font-size: 0.9em;
+                            color: #000000;
+                            font-style: normal;
+                            font-weight: 100;
+                        }
+                    }
+                }
+    
+            }
+    
+            .item-price{
+                font-weight: 450;
+                font-size: 00.9em;
+            }
+    
+            .item-size{
+                font-size: 0.8em;
+            }
+    
+            .number-bloc{
+                position: absolute;
+                bottom: -35px;
+                left: 20px;
+            }
+    
+        }
+    
+        .del-price{
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 0;
+            flex-direction: row-reverse;
+
+            .pi{
+                font-size: 1.1em;
+                cursor: pointer;
+                margin-left: 10px;
+
+                &:hover{
+                    font-size: 1.2em;
+                    color: red;
+                }
+            }
+
+            
+    
+            .info-total-price{
+                font-size: 0.9em;
+                font-weight: 350;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 425px){
+    .item{
+
+        img{
+            width: 110px;
+            height: 110px;
+        }
+    
+        .item-infos{       
+            .number-bloc{
+                    bottom: -30px;
+                    left: 12px;
+            }
+        }
+    }
+}

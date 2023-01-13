@@ -137,12 +137,11 @@ export class AddOrderService {
 
   compareTwoStringArray(firstArray: string[], secondArray: string[]){
 
-    //We first sort array
+    //We first sort arrays
     firstArray.sort();
     secondArray.sort();
 
-    //We compare sorted array
-
+    //We compare sorted arrays
     return JSON.stringify(firstArray) === JSON.stringify(secondArray);
   }
 }

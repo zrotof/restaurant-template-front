@@ -1,0 +1,56 @@
+.recommanded{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+
+    h2{
+        font-size: 2em;
+        color: red;
+        position: relative;
+        margin-bottom: 70px;
+        z-index: 1;
+        text-align: center;
+        
+        &::after{
+            position: absolute;
+            content: "";
+            width: 100px;
+            height: 5px;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: black;
+        }
+    }
+
+    span{
+        max-width: 900px;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .products{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    button{
+        padding: 10px 20px;
+        font-size: 1.05em;
+        border-radius: 100px;
+        background: red;
+        color: white;
+        border: 2px solid red;
+        cursor: pointer;
+        margin-top: 40px;
+        transition: all 0.2s ease-in-out;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+        &:hover{
+            background: white;
+            color: red;
+        }
+    }
+}

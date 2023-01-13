@@ -1,114 +1,31 @@
 <div class="home">
 
     <div class="hero">
-        <img src="../../../assets/home/hero-bg.jpeg" alt="">
+        <img src="../../../assets/img//home//hero/hero-bg.jpeg" alt="">
         <div class="texts">
             <h1>BIENVENU CHEZ</h1>
             <p class="logo">
                 <span>Food</span> Universe
             </p>
-            <span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</span>
+            <p class="text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
         </div>
     </div>
 
     <div class="content my-container">
 
         <app-home-about></app-home-about>
+        
+        <app-home-what-makes-difference></app-home-what-makes-difference>
 
-        <ul class="what-make-difference">
-            <ng-template ngFor let-reason [ngForOf]="reasons">
-                <li>
-                    <img src={{reason.image}} alt="{">
-                    <h3 class="title">{{reason.title}}</h3>
-                    <span>{{reason.text}}</span>
-                </li>
-            </ng-template>
-        </ul>
+        <app-home-hours></app-home-hours>
 
-        <div class="horaires-content">
-            <div class="horaires-bloc">
-                
-                <div class="clock-bloc">
-                    <i class="pi pi-clock"></i>
-                    <h3>Horaires d'ouverture</h3>
-                </div>
+        <app-home-recommendations></app-home-recommendations>
 
-                <div class="horaires">
-                    <ul>
-                        <li class="horaire">
-                                <span class="horaire-text">Mardi à Jeudi</span>
-                                <span class="horaire-value">12h00 - 15h00</span>
-                                <span class="horaire-value">19h30 - 22h30</span>
-                        </li>
-
-                        <li class="horaire">
-                            <span class="horaire-text">Vendredi à Samedi</span>
-                            <span class="horaire-value">12h00 - 15h00</span>
-                            <span class="horaire-value">19h00 - 23h30</span>
-                        </li>
-
-                    </ul>
-
-                    <div class="ways-to-eat">
-                        <span >
-                            <i class="pi pi-check-circle"></i>
-                            Sur place
-                        </span>
-
-                        <span>
-                            <i class="pi pi-check-circle"></i>
-                            À emporter
-                        </span>
-
-                        <span>
-                            <i class="pi pi-check-circle"></i>
-                            En livraison
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="recommanded">
-            <h2>Les Recommandations Du Chef</h2>
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, fugiat, vel itaque quidem eligendi repellat sed impedit possimus beatae quaerat laudantium. Saepe eum dignissimos ad accusantium in perspiciatis animi hic.</span>
-            <div class="products">
-                <ng-template ngFor let-product [ngForOf]="recommendedPlats";>
-                    <app-product-details [product] = "product"></app-product-details>
-                </ng-template>
-            </div>
-            <button routerLink="/notre-carte">Voir Tous les Plats</button>
-        </div>
-
-        <div class="delivery">
-            <img class="left" src="../../../assets/img/deliveries/deliver-guy.jpeg" alt="delivery guy">
-            <div class="right">
-                <h2 class="header">Faites-vous livrer à domicile</h2>
-                <p>Pour vos livraisons et dégustations à domicile retrouvez nous sur <span>Uber Eats</span>, <span>Deliveroo</span> et <span>Just Eat</span>. Nous vous offrons un p'tit cadeau pour vos commandes.</p>
-                <ul>
-                    <ng-template ngFor let-app [ngForOf]="foodApps">
-                        <li>
-                            <img src={{app.image}} alt={{app.alt}}>
-                            <a href={{app.link}} target="_blank">{{app.name}}</a>
-                        </li>
-                    </ng-template>
-                </ul>
-            </div>
-        </div>
+        <app-home-delivery></app-home-delivery>
 
         <app-testimonies></app-testimonies>
 
-        <div class="phone-apps">
-            <img class="left" src="../../../assets/img/home/apps/looking-phone.png" alt="use phone">
-            <div class="right">
-                    <h5>Téléchargez l'application </h5>
-                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptatem, ipsa tempore placeat omnis inventore provident laudantium hic aliquam ut repellendus dicta incidunt commodi, cum excepturi aliquid consequatur nostrum quia!</span>
-                    <div class="stores">
-                        <img class="store" src="../../../assets/home/play-store.png" alt="">
-                        <img class="store" src="../../../assets/home/app-store.png" alt="">
-                    </div>
-            </div>
-        </div>
+        <app-home-phone-apps></app-home-phone-apps>
     </div>
 
 </div>

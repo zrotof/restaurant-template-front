@@ -19,6 +19,7 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ToastModule } from 'primeng/toast';
+import { DialogModule } from 'primeng/dialog';
 
 
 
@@ -26,7 +27,7 @@ import { ToastModule } from 'primeng/toast';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { CartComponent } from './components/cart/cart.component';
+import { SideCartComponent } from './components/side-cart/side-cart.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { OrderItemComponent } from './components/order-item/order-item.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -37,15 +38,21 @@ import { ChiefsComponent } from './components/chiefs/chiefs.component';
 import { OrderFormTypeOneComponent } from './components/order-form-type-one/order-form-type-one.component';
 import { OrderFormTypeTwoComponent } from './components/order-form-type-two/order-form-type-two.component';
 import { OrderFormTypeThreeComponent } from './components/order-form-type-three/order-form-type-three.component';
-
-
+import { SideMenuComponent } from './components/side-menu/side-menu.component';
+import { HomeHoursComponent } from './components/home-hours/home-hours.component';
+import { HomeWhatMakesDifferenceComponent } from './components/home-what-makes-difference/home-what-makes-difference.component';
+import { HomeRecommendationsComponent } from './components/home-recommendations/home-recommendations.component';
+import { HomeDeliveryComponent } from './components/home-delivery/home-delivery.component';
+import { HomePhoneAppsComponent } from './components/home-phone-apps/home-phone-apps.component';
+import { MiniHeroComponent } from './components/mini-hero/mini-hero.component';
+import { CartPageItemProductComponent } from './components/cart-page-item-product/cart-page-item-product.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CartComponent,
+    SideCartComponent,
     HomeComponent,
     AboutComponent,
     MenuComponent,
@@ -60,7 +67,15 @@ import { OrderFormTypeThreeComponent } from './components/order-form-type-three/
     ChiefsComponent,
     OrderFormTypeOneComponent,
     OrderFormTypeTwoComponent,
-    OrderFormTypeThreeComponent
+    OrderFormTypeThreeComponent,
+    SideMenuComponent,
+    HomeWhatMakesDifferenceComponent,
+    HomeHoursComponent,
+    HomeRecommendationsComponent,
+    HomeDeliveryComponent,
+    HomePhoneAppsComponent,
+    MiniHeroComponent,
+    CartPageItemProductComponent
     
   ],
   imports: [
@@ -76,7 +91,8 @@ import { OrderFormTypeThreeComponent } from './components/order-form-type-three/
     DynamicDialogModule,
     RadioButtonModule,
     CheckboxModule,
-    ToastModule
+    ToastModule,
+    DialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

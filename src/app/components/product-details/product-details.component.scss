@@ -2,27 +2,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 325px;
+    width: 300px;
     margin: 20px 15px;
     padding: 20px;
     border-radius: 5px;
     cursor: pointer;
 
+    &:hover{
+        background-color: rgb(230, 230, 230);
+    }
+
                     img{
-                        width: 160px;
-                        height: 160px;
+                        width: 135px;
+                        height: 135px;
                         object-fit: cover;
                         border-radius: 5px;
                     }
 
                     .service-title{
-                        font-size: 1.2em;
+                        font-size: 1.1em;
                         margin: 15px 0 12px 0;
                     }
 
                     span{
                         text-align: center;
-                        font-size: 0.93em;
+                        font-size: 0.9em;
                     }
 
                     .price{
@@ -37,24 +41,27 @@
                         outline: none;
                         border: none;
                         border-radius: 3px;
-                        padding: 3px 20px;
+                        padding: 5px 20px;
                         background-color: white;
-                        border: 2px solid #303030;
+                        border: 1.5px solid #303030;
                         color: black;
                         width: fit-content;
-                        font-size: 0.95em;
+                        font-size: 0.92em;
                         transition: all 0.3s ease-in-out;
                         margin: auto;
                         cursor: pointer;
                     }
         
                     button:hover{
-                        border: 2px solid green;
+                        border: 1.5px solid green;
                         background-color: green;
                         color: white;
                     }
             }
 
-.product:hover{
-    background-color: rgb(230, 230, 230);
+@media all and (max-width: 425px){
+    .product{
+        width: 100%;
+        margin: 20px 0;
+    }
 }

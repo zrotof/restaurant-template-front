@@ -1,0 +1,33 @@
+<div class="side-menu">
+
+    <p-button 
+            type="button"
+            class="burger"  
+            (click)="onBurgerMenu()" 
+            [icon]="sideMenuDisplayed == true ? 'pi pi-times' : 'pi pi-bars'"
+    >
+    </p-button>
+    
+    <p-sidebar styleClass="menu-side-bar" [(visible)]="sideMenuDisplayed" position="right" [blockScroll]=true >
+
+        
+        <ng-template pTemplate="content">
+            <nav>
+                <ul>
+                    <li>
+                        <a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"  routerLink="/">Accueil</a>
+                    </li>
+                    <li>
+                        <a routerLinkActive="active-link" routerLink="/a-propos">Le Restaurant</a>
+                    </li>
+                    <li>
+                        <a routerLinkActive="active-link" routerLink="/notre-carte">Notre Carte</a>
+                    </li>
+                    <li>
+                        <a routerLinkActive="active-link" routerLink="/contact">Nous Contacter</a>
+                    </li>
+                </ul>
+            </nav>
+        </ng-template>
+    </p-sidebar>
+</div> 

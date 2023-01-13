@@ -1,0 +1,15 @@
+<div class="delivery">
+    <img class="left" src="../../../assets/img/deliveries/deliver-guy.jpeg" alt="delivery guy">
+    <div class="right">
+        <h2 class="header">Faites-vous livrer à domicile</h2>
+        <p>Pour vos livraisons et dégustations à domicile retrouvez nous sur <span>Uber Eats</span>, <span>Deliveroo</span> et <span>Just Eat</span>. Nous vous offrons un p'tit cadeau pour vos commandes.</p>
+        <ul>
+            <ng-template ngFor let-app [ngForOf]="foodApps">
+                <li>
+                    <img src={{app.image}} alt={{app.alt}}>
+                    <a href={{app.link}} target="_blank">{{app.name}}</a>
+                </li>
+            </ng-template>
+        </ul>
+    </div>
+</div>

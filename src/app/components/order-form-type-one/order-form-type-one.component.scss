@@ -246,4 +246,10 @@
     
     }
 
+    @media all and (max-width: 540px){
+        .product-modal-details{
+            width: 100%;
+            height: 100%;
+        }
+    }
 

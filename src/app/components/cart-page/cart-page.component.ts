@@ -20,6 +20,8 @@ export class CartPageComponent implements OnInit {
   cartForm : FormGroup ;
   isCartFormSubmitted = false;
   isCartFormSubmittedAndNotErrorOnClientSide = false;
+
+  cartItem!: any[];
   
   constructor(
     private addOrderService: AddOrderService,
@@ -47,16 +49,17 @@ export class CartPageComponent implements OnInit {
 
   get f() { return this.cartForm.controls; }
 
-  editProductQuantity(item: OrderItem, quantity: number){
+  editProduct($event: any){
 
-    item.quantity += quantity;
+    const eventObject = $event;
 
-    if(item.quantity == 0){
-      this.addOrderService.deleteOrderedItem(item);
+    if(eventObject.quantity == 0 || ((eventObject.item.quantity + eventObject.quantity) == 0)){
+      this.addOrderService.deleteOrderedItem(eventObject.item);
       return ;
     }
 
-    this.addOrderService.updateOrderedItemQuantityFromCart(item);
+    eventObject.item.quantity += eventObject.quantity;
+    this.addOrderService.updateOrderedItemQuantityFromCart(eventObject.item);
   }
 
   getTotalPrice(){
@@ -95,10 +98,8 @@ export class CartPageComponent implements OnInit {
 
   onValidateCart(){
     //this.router.navigate(['panier/livraison']);
-
     return;
   }
-
 
   compareTwoStringArray(firstArray: string[], secondArray: string[]){
 

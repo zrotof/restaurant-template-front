@@ -12,11 +12,11 @@ export class ProductsService {
   constructor(private http : HttpClient) { }
 
   getProducts(activeMenuLink: string): Observable<Product[]>{
-    return this.http.get<Product[]>("http://api.restaurant.sm-digitalizer.fr/product/"+activeMenuLink);
+    return this.http.get<Product[]>("https://api.restaurant.sm-digitalizer.fr/product/"+activeMenuLink);
   }
 
   getRecommandedPlats(): Observable<Product[]>{
-    return this.http.get<Product[]>("http://api.restaurant.sm-digitalizer.fr/product/"+'recommanded');
+    return this.http.get<Product[]>("https://api.restaurant.sm-digitalizer.fr/product/recommanded");
   }
 
 }

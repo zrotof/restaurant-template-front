@@ -1,11 +1,11 @@
-<div class="header">
+<header>
 
-    <div class="content header-container">
+    <div class="content my-container">
         <a routerLink="/"  class="logo">
             <span>Food</span> Universe
         </a>
     
-        <nav>
+        <nav class="navigation">
             <ul>
                 <li>
                     <a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"  routerLink="/">Accueil</a>
@@ -22,9 +22,9 @@
             </ul>
         </nav>
     
-        <app-cart></app-cart>
+        <app-side-cart></app-side-cart>
+        <app-side-menu></app-side-menu>
 
     </div>
 
-
-</div>
+</header>

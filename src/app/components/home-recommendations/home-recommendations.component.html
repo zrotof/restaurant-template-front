@@ -1,0 +1,10 @@
+<div class="recommanded">
+    <h2>Les Recommandations Du Chef</h2>
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, fugiat, vel itaque quidem eligendi repellat sed impedit possimus beatae quaerat laudantium. Saepe eum dignissimos ad accusantium in perspiciatis animi hic.</span>
+    <div class="products">
+        <ng-template ngFor let-product [ngForOf]="recommendedPlats";>
+            <app-product-details [product] = "product"></app-product-details>
+        </ng-template>
+    </div>
+    <button routerLink="/notre-carte">Voir Tous les Plats</button>
+</div>

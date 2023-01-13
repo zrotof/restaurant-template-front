@@ -92,6 +92,13 @@ export class OrderFormTypeOneComponent implements OnInit {
     let sauceObjectArray = this.f.selectedOptionals.value.filter(
         (item: any) => (item.checked == true) 
     )
+
+    console.log(sauceObjectArray)
+    //Order sauces to alphabetic rules
+    sauceObjectArray.sort();
+
+    console.log(sauceObjectArray)
+
     sauceObjectArray.forEach((item:any) =>{
       sauces.push(item.name)
     })

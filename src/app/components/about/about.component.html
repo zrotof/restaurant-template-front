@@ -1,18 +1,12 @@
 <div class="about">
 
-    <div class="about-header">
-        <img src="../../../assets/contact/header-bg.jpeg" alt="">
-        <div class="texts">
-            <h1>À Propos </h1>
-            <span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</span>
-        </div>
-    </div>
+    <app-mini-hero [miniHero]="miniHero"></app-mini-hero>
 
-    <div class="content content-container">
+    <div class="content my-container">
         <div class="history">
 
             <div class="history-img">
-                <img  src="../../../assets/about/history.jpeg" alt="">
+                <img  src="../../../assets/img/restaurant/history.jpeg" alt="">
             </div>
     
             <div class="history-infos">
@@ -31,6 +25,7 @@
                 </span>
                
             </div>
+            
         </div>
 
         <div class="services">
@@ -42,25 +37,24 @@
 
             <div class="services-bloc">
                 <div class="service">
-                    <img src="../../../assets/about/breakfast.png" alt="">
+                    <img src="../../../assets/img/restaurant/breakfast.png" alt="">
                     <h5 class="service-title">Petit Déjeuner</h5>
                     <span>Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout accompagné d’un verre .</span>
-                    <button>Découvrir</button>
+                    <button routerLink="/notre-carte">Découvrir</button>
                 </div>
 
                 <div class="service">
-                    <img src="../../../assets/about/breakfast.png" alt="">
+                    <img src="../../../assets/img/restaurant/breakfast.png" alt="">
                     <h5 class="service-title">Déjeuner</h5>
                     <span>Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout accompagné d’un verre de jus d’orange.</span>
-                    <button>Découvrir</button>
-
+                    <button routerLink="/notre-carte">Découvrir</button>
                 </div>
 
                 <div class="service">
-                    <img src="../../../assets/about/breakfast.png" alt="">
+                    <img src="../../../assets/img/restaurant/breakfast.png" alt="">
                     <h5 class="service-title">Diner</h5>
                     <span>Des céréales avec du lait ou bien des tartines pain-beurre-confiture, le tout .</span>
-                    <button>Découvrir</button>
+                    <button routerLink="/notre-carte">Découvrir</button>
 
                 </div>
             </div>

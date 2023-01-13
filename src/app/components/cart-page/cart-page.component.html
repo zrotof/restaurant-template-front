@@ -1,41 +1,12 @@
-<div class="items-bloc">
+<div class="cart-page">
 
         <div class="content my-container">
 
             <div class="cart-checkout"  *ngIf="itemList.items.length > 0; else emptyCart">
                 <div class="items-list">
-                    <div class="item" *ngFor="let item of itemList.items">
-                        <img src={{item.image}} alt={{item.name}}>
-                        <div class="item-infos">
-                            <div class="item-details">
-                                <span class="title"> {{item.name}}</span>
-                            
-                                <div class="details">
-                                    <div class="accompaniment" *ngIf="item.mandatory">
-                                        <span> -> {{item.mandatory}} </span>
-                                    </div>
-        
-                                    <div class="optionals" *ngIf="item.optionals.length > 0">
-                                        <span> -> {{concatOptionals(item.optionals)}} </span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="number-bloc">
-                                <span (click)="editProductQuantity(item, -1)" class="buttons">
-                                    <i class="pi pi-minus"></i>
-                                </span>
-                                <span class="item-quantity">{{item.quantity}}</span>
-                                <span (click)="editProductQuantity(item, 1)" class="buttons">
-                                    <i class="pi pi-plus"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="del-price">
-                            <i class="pi pi-trash" (click)="deleteProduct(item)"></i>
-                            <span class="info-total-price"> {{item.price * item.quantity | number :"1.2"}} €</span>
-                        </div>
-                    </div>
+                    <ng-template ngFor let-item [ngForOf]="itemList.items">
+                        <app-cart-page-item-product (editProductEvent)="editProduct($event)" [item]="item" ></app-cart-page-item-product>
+                    </ng-template>
         
                 </div>
                 <div class="total-form">

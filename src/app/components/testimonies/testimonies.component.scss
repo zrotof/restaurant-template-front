@@ -15,6 +15,7 @@
         color: red;
         position: relative;
         margin-bottom: 50px;
+        text-align: center;
         z-index: 1;
 
         &::after{
@@ -35,7 +36,6 @@
         align-items: center;
         position: relative;
         justify-content: center;
-        margin-top: 100px;
         margin-top: 55px;
 
         .mySlide {
@@ -117,4 +117,11 @@
             }
         } 
     }
+}
+
+@media all and (max-width: 425px){
+
+.testimonies{
+    margin-bottom: 90px;
+}
 }

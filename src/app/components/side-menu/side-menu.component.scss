@@ -1,0 +1,129 @@
+.p-sidebar-mask{
+    z-index: 4 !important;
+}
+
+.side-menu{
+    position: relative;
+    width: fit-content;
+
+    .burger{
+            display: block;
+            button{
+                background: none;
+                border: none;
+                border-radius: 50%;
+                border: none;
+                outline: none;
+                color: black;
+                cursor: pointer;
+                box-shadow: none;
+
+                &:hover{
+                    background: none;
+                    color: black;
+                }
+
+                .pi{
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+        .menu-side-bar {
+            
+            background-image: url("../../../assets/img/side-menu/food-icon.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+            &::after{
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.94);
+            }
+
+            .p-sidebar-header{
+                z-index: 2;
+                
+                button{
+                    background: black;
+                    border: none;
+                    border-radius: 50%;
+                    border: none;
+                    outline: none;
+                    color: white;
+                    cursor: pointer;
+                    box-shadow: none;
+        
+                    .pi{
+                        font-size: 1.3rem;
+                    }
+                }
+
+                .p-sidebar-icon:enabled:hover {
+                    color: red;
+                    border-color: transparent;
+                    background: black;
+                }
+            }
+
+            .p-sidebar-content{
+                padding-top: 0;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 2;
+                nav{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    ul{
+                        display: flex;
+                        flex-direction: column;
+                        list-style: none;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 0;
+                    
+                        li{
+                            margin: 15px 0;
+        
+                            a{
+                                text-decoration: none;
+                                padding: 4px 12px;
+                                border-radius: 100px;
+                                color: black;
+                                font-weight: 450;
+                                cursor: pointer;
+                                font-size: 1em;
+                                border: 2px solid transparent;
+                            }
+        
+                            a:hover{
+                                border: 2px solid red
+                            }
+        
+                            .active-link{
+                                background-color: red;
+                                color: white;
+                                border: 2px solid red
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+}
+
+@media all and (max-width: 650px){
+    .side-menu{
+        .menu-side-bar {
+            width: 100%;
+        }
+    }
+}

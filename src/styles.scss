@@ -34,3 +34,10 @@ ul{
     max-width: 1300px;
     padding: 0 40px;
 }
+
+@media all and (max-width: 570px){
+    .my-container{
+
+        padding: 5px 15px;
+    }
+}

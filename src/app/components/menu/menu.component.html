@@ -1,14 +1,9 @@
 <div class="menu">
 
-    <div class="menu-header">
-        <img src="../../../assets/contact/header-bg.jpeg" alt="">
-        <div class="texts">
-            <h1>Nos Menus </h1>
-            <span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</span>
-        </div>
-    </div>
+    <app-mini-hero [miniHero]="miniHero"></app-mini-hero>
 
-    <div class="content content-container">
+
+    <div class="content my-container">
         
         <div class="menu-headers">
             <ng-template ngFor let-menu [ngForOf]="menus">

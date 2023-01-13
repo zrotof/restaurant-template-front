@@ -1,0 +1,9 @@
+<ul class="what-makes-difference">
+    <ng-template ngFor let-reason [ngForOf]="reasons">
+        <li>
+            <img src={{reason.image}} alt="{">
+            <h3 class="title">{{reason.title}}</h3>
+            <span>{{reason.text}}</span>
+        </li>
+    </ng-template>
+</ul>

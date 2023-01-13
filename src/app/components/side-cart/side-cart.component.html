@@ -1,0 +1,46 @@
+<div class="side-cart">
+ 
+    <button class="nav-cart" (click)="displaySidebar()">
+        <i class="pi pi-shopping-cart"></i>
+        <span class="number">
+            {{numberOfItems}}
+        </span>
+    </button>
+    
+    <p-sidebar styleClass="cart-side-bar" [(visible)]="siderbarDisplayed" position="right" [blockScroll]=true >
+        
+        <div class="cart-side-bar-content">
+            <ng-container *ngIf="!isCartEmpty; else emptyCart">
+            
+                <span class="cart-title">Votre Commande</span>
+    
+                <div class="items">
+                    <ng-template ngFor let-orderedProduct [ngForOf]="orderedProductList?.items"; let-index = "index"; let-first="first">
+                        <app-order-item [order]="orderedProduct">
+                           
+                        </app-order-item>
+                    </ng-template>
+                </div>
+                
+                <div class="bottom-bloc">
+                    <div class="price-bloc">
+                        <span class="label">Total </span>
+                        <span class="price"> {{totalPrice | number: "1.2"}} € </span>
+                    </div>
+                    <button (click)="openCartPage()" class="validate-order">FINALISER LA COMMANDE</button>
+                </div>
+                
+            </ng-container>
+            <ng-template #emptyCart>
+    
+                <span class="cart-title">Votre panier est vide pour le moment...</span>
+    
+                <div class="bottom-bloc">
+                    <button (click)="openMenuPage()" class="validate-order">CONSULTER NOS MENUS</button>
+                </div>
+                
+            </ng-template>
+        </div>
+        
+    </p-sidebar>
+</div> 

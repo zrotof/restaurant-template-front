@@ -4,13 +4,13 @@ import { Order, OrderItem } from 'src/app/models/order';
 import { AddOrderService } from 'src/app/services/add-order/add-order.service';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss'],
+  selector: 'app-side-cart',
+  templateUrl: './side-cart.component.html',
+  styleUrls: ['./side-cart.component.scss'],
   encapsulation : ViewEncapsulation.None
 
 })
-export class CartComponent implements OnInit {
+export class SideCartComponent implements OnInit {
 
   siderbarDisplayed = false;
 

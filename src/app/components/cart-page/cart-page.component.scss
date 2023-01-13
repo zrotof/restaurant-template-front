@@ -1,4 +1,4 @@
-.items-bloc{
+.cart-page{
             display: flex;
             justify-content: center;
             width: 100%;
@@ -16,149 +16,18 @@
                     justify-content: center;
                     width: center;
                     margin-top: 8em;
+                    width: 100%;
+
                     .items-list{
                         width: 500px;
                         margin: 0 10px;
     
-                        .item{
-                            display: flex;
-                            justify-content: space-between;
-                            background-color: white;
-                            height: 120px;
+                        app-cart-page-item-product{
                             width: 100%;
-                            margin-bottom: 10px;
-                            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-    
-    
-                            img{
-                                width: 150px;
-                                height: 100%;
-                                object-fit: cover;
-                            }
-    
-                            .item-infos{
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: space-between;         
-                                padding: 10px 0 10px 10px;
-                                width: calc(100% - 150px - 85px );
-    
-                                .item-details{
-                                    display: flex;
-                                    flex-direction: column;
-    
-                                    .title{
-                                        margin-bottom: 5px;
-                                        font-weight: 550;
-                                        text-overflow: ellipsis;
-                                        overflow: hidden;
-                                        white-space: nowrap;
-                                    }
-        
-                                    .details{
-                                        display: flex;
-                                        flex-direction: column;
-        
-                                        .accompaniment,
-                                        .optionals{
-                                            span{
-                                                font-size: 0.9em;
-                                                color: #000000;
-                                                font-style: normal;
-                                                font-weight: 100;
-                                                width: 100%;
-                                                text-overflow: ellipsis;
-                                                white-space: nowrap;
-                                                overflow: hidden;
-                                            }
-                                        }
-        
-                                        .optionals{
-                                            display: flex;
-        
-                                            li{
-                                                white-space: nowrap;
-                                                margin: 0;
-                                                font-size: 0.9em;
-                                                color: #000000;
-                                                font-style: normal;
-                                                font-weight: 100;
-                                            }
-                                        }
-                                    }
-                                }
-    
-                                .item-price{
-                                    font-weight: 450;
-                                    font-size: 00.9em;
-                                }
-    
-                                .item-size{
-                                    font-size: 0.8em;
-                                }
-    
-                                .number-bloc{
-                                    display: flex;
-                                    align-items: center;
-                                    .buttons{
-                                        height: 25px;
-                                        width: 25px;
-                                        border-radius: 50%;
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
-                                        border: 1px solid black;
-                                        cursor: pointer;
-    
-                                        .pi{
-                                            font-size: 0.8em;
-                                        }
-                                    }
-    
-                                    .buttons:hover{
-                                        background: black;
-                                        color: white;
-                                    }
-    
-                                    .item-quantity{
-                                        padding: 0 5px;
-                                        width: 40px;
-                                        text-align: center;
-                                    }
-                                }
-    
-                            }
-    
-                            .del-price{
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: space-between;
-                                align-items: flex-end;
-                                padding: 10px 10px 10px 0;
-                                width: 85px;
-                                white-space: nowrap;
-    
-                                .pi{
-                                    font-size: 1.1em;
-                                    cursor: pointer;
-                                    
-                                }
-                                .pi:hover{
-                                    font-size: 1.2em;
-                                    color: red;
-                                }
-    
-                                .info-total-price{
-                                    font-size: 0.9em;
-                                    font-weight: 350;
-                                }
-                            }
                         }
-    
                     }
     
                     .total-form{
-    
                         display: flex;
                         flex-direction: column;
                         padding: 20px;
@@ -193,14 +62,12 @@
                             }
         
                             .price-total{
-        
                                 display: flex;
                                 justify-content: space-between;
                                 font-weight: bold;
                                 margin: 20px 0;
                                 font-weight: bold;
                                 font-size: 1.1em;
-        
                             }
     
                         }
@@ -318,7 +185,9 @@
                     .buttons{
 
                         display: flex;
-
+                        flex-wrap: wrap;
+                        align-items: center;
+                        justify-content: center;
 
                         button{
                             width: 170px;
@@ -326,9 +195,8 @@
                             border-radius: 100px;
                             font-size: 1.01em;
                             cursor: pointer;
-                            margin: 20px;
+                            margin: 20px 20px 10px 20px;
                             transition: all 0.2s ease-in-out;
-
                         }
 
                         .menu{
@@ -354,6 +222,26 @@
                         }
                     }
                 }
-
             }
         }
+
+@media all and (max-width: 950px){
+    .cart-page{
+        .content{
+            .cart-checkout{
+                flex-direction: column;
+                align-items: center;
+
+                .items-list{
+                    margin: 0;
+                    width: 100%;
+                }
+
+                .total-form{
+                    margin: 40px 0 0 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

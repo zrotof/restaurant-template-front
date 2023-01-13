@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { MailService } from 'src/app/services/mail/mail.service';
 import { finalize } from 'rxjs/operators';
+import { MiniHero } from 'src/app/models/mini-hero';
 
 @Component({
   selector: 'app-contact',
@@ -24,6 +25,8 @@ options: any;
 
 overlays: any[] | undefined;
 
+miniHero !: MiniHero;
+
 constructor(
   private fb: FormBuilder, 
   private mailService: MailService,
@@ -39,6 +42,8 @@ constructor(
 }
   ngOnInit(): void {
 
+    this.initMiniHero();
+
     this.options = {
       center: {lat: 36.890257, lng: 30.707417},
       zoom: 12
@@ -48,6 +53,14 @@ constructor(
       new google.maps.Marker({position: {lat: 36.879466, lng: 30.667648}, title:"Konyaalti"})
     ]
 */
+  }
+
+  initMiniHero(){
+    this.miniHero = {
+      title: "À propos",
+      text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+      image: "../../../assets/img/contact/header-bg.jpeg"
+    }
   }
 
   // convenient getter for easy access to form fields
